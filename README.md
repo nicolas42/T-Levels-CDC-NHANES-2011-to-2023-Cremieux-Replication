@@ -31,5 +31,6 @@ All data comes from the **CDC’s National Health and Nutrition Examination Surv
 ```bash
 pip install pandas pyreadstat
 
-```bash
 python nhanes_all_years.py
+
+```
