@@ -26,13 +26,10 @@ All data comes from the **CDC’s National Health and Nutrition Examination Surv
 ### Setup & Running
 
 1. Download the relevant `.xpt` files (TST + DEMO for each cycle) into one folder.
-2. Install required packages:
+2. Install required packages and run.
 
 ```bash
-# install pandas
 pip install pandas pyreadstat
 
-# run
 python main.py
-
 ```
