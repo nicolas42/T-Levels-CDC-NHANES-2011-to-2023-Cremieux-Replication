@@ -1,3 +1,5 @@
+# NHANES ALL YEARS
+
 import pandas as pd
 import pyreadstat
 
@@ -52,3 +54,30 @@ for year, (tst_file, demo_file) in cycles.items():
 summary = pd.DataFrame(results)
 print("\n=== Total Testosterone Trend - Men 20+ (NHANES) ===")
 print(summary)
+
+
+# ======================
+# Graph it
+# ======================
+
+import matplotlib.pyplot as plt
+
+# After you have the 'summary' DataFrame..
+
+plt.figure(figsize=(8, 5))
+plt.plot(summary['Cycle'], summary['Weighted Mean T (ng/dL)'], 
+         marker='o', linewidth=2.5, markersize=8, color='#1f77b4')
+
+plt.title('U.S. Male Total Testosterone Trend (NHANES)', fontsize=14, pad=15)
+plt.xlabel('NHANES Cycle')
+plt.ylabel('Weighted Mean Total Testosterone (ng/dL)')
+plt.grid(True, alpha=0.3)
+
+# Add value labels on points
+for i, value in enumerate(summary['Weighted Mean T (ng/dL)']):
+    plt.text(i, value + 2, f'{value:.1f}', ha='center', fontsize=11)
+
+plt.tight_layout()
+# plt.savefig('testosterone_trend.png', dpi=200, bbox_inches='tight')
+# print("\n✅ Graph saved as 'testosterone_trend.png'")
+plt.show()   # optional - opens the plot window

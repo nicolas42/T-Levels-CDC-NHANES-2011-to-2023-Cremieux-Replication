@@ -1,3 +1,5 @@
+# Test file with just a single year of data
+
 import pandas as pd
 import pyreadstat
 
